@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>成绩单</title>
+    <link rel="stylesheet" href="./bootstrap-3.3.7-dist/css/bootstrap.css">
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <script src="./bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="//apps.bdimg.com/libs/jqueryui/1.10.4/css/jquery-ui.min.css">
+    <script src="https://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="https://apps.bdimg.com/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+    <script src="./JS/judgeForam.js"></script>
+    <script>
+        $(function() {
+            $( "#dialog" ).dialog({
+                autoOpen: false,
+                show: {
+                    effect: "blind",
+                    duration: 1000
+                },
+                hide: {
+                    effect: "explode",
+                    duration: 1000
+                }
+            });
+
+            $( "#opener" ).click(function() {
+                $( "#dialog" ).dialog( "open" );
+            });
+        });
+    </script>
+    <style>
+        body{
+            text-align: center;
+        }
+        tr,th,td{
+            text-align: center;
+            border:1px solid #000;
+        }
+        .table{
+            width:600px;
+            margin-top: 20px;
+            margin-right: auto;
+            margin-bottom: 0px;
+            margin-left: auto;
+        }
+        .dialog{
+            width:500px;
+        }
+        table{
+            text-align: center;
+        }
+        form{
+            text-align: center;
+        }
+    </style>
+
+</head>
+<body>
+<div>
+ <table class="table table-bordered">
+     <tr>
+         <th colspan = '7'> 学生成绩单</th>
+     </tr>
+     <tr>
+        <th>姓名</th>
+        <th>数学</th>
+        <th>语文</th>
+        <th>英语</th>
+        <th>编程</th>
+        <th>平均分</th>
+        <th>总分</th>
+    </tr>
+    <tr>
+        <td>张三</td>
+        <td>75</td>
+        <td>95</td>
+        <td>80</td>
+        <td>80</td>
+        <td>82.5</td>
+        <td>330</td>
+    </tr>
+    <tr>
+        <td>李四</td>
+        <td>85</td>
+        <td>80</td>
+        <td>70</td>
+        <td>90</td>
+        <td>81.25</td>
+        <td>325</td>
+    </tr>
+ </table>
+</div>
+<br><br>
+<div></div>
+
+<div id="dialog" >
+    <form id="chengji-form" class="form-inline" name="testform">
+        <p>请输入学生信息（格式：姓名 学号 民族 班级）</p>
+        <div class="form-group">
+            <label class="sr-only" for="exampleInputAmount1">学生信息</label>
+            <div class="input-group">
+                <input type="text" name="inputfield1" class="form-control" id="exampleInputAmount1" placeholder="学生信息">
+            </div>
+        </div>
+        <p>请输入学生信息（格式：数学 语文 英语 编程）</p>
+        <div class="form-group">
+            <label class="sr-only" for="exampleInputAmount2">成绩单</label>
+            <div class="input-group">
+                <input type="text" name="inputfield2" class="form-control" id="exampleInputAmount2" placeholder="成绩单">
+            </div>
+        </div>
+        <br><br>
+        <input type="submit" value="Submit" id="mytest1" class="btn btn-primary"/>
+    </form>
+</div>
+<button id="opener" class="btn btn-primary">添加学生成绩</button>
+<br><br>
+<div>
+    <form class="form-inline" name="Search" id="search-form">
+        <div class="form-group">
+            <label class="sr-only" for="InputGrade">输入学号</label>
+            <div class="input-group"><div class="input-group-addon">ID: </div>
+            <input type="text" class="form-control"  name="inputfield3" id="InputGrade" placeholder="输入学号">
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary" id="SearchGrade">查询成绩</button>
+    </form>
+</div>
+</body>
+</html>
